@@ -13,6 +13,7 @@ class MyGame extends StatefulWidget {
   final String nomeA;
   final String nomeB;
 
+
   @override
   State<MyGame> createState() => _MyGameState();
 }
@@ -45,6 +46,7 @@ class _MyGameState extends State<MyGame> {
   bool jogoIniciado = false;
   int jogadas = 0;
 
+
   @override
   void initState() {
     // TODO: implement initState
@@ -54,6 +56,9 @@ class _MyGameState extends State<MyGame> {
 
   @override
   Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
+
+    print(screenSize.toString());
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue.shade900,
@@ -112,7 +117,7 @@ class _MyGameState extends State<MyGame> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(widget.nomeA,style: TextStyle(fontSize: 33,fontWeight: FontWeight.w200),),
+                          Text(widget.nomeA,style: TextStyle(fontSize: 33,fontWeight: FontWeight.w200,overflow: TextOverflow.ellipsis),),
                           Text(placarA.toString(),style: TextStyle(fontSize: 33,fontWeight: FontWeight.w200),),
                         ],
                       ),
@@ -125,7 +130,7 @@ class _MyGameState extends State<MyGame> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Text(widget.nomeB,style: TextStyle(fontSize: 33,fontWeight: FontWeight.w200),),
+                          Text(widget.nomeB,style: TextStyle(fontSize: 33,fontWeight: FontWeight.w200,overflow: TextOverflow.ellipsis),),
                           Text(placarB.toString(),style: TextStyle(fontSize: 33,fontWeight: FontWeight.w200),),
                         ],
                       ),
@@ -160,27 +165,13 @@ class _MyGameState extends State<MyGame> {
                 ),
               ),
 
-              SizedBox(height: 50,),
+              screenSize.height > 700 ? SizedBox(height: 50,) : SizedBox(height: 0),
 
               AbsorbPointer(
                 absorbing: !jogoIniciado,
                 child: Column(
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        /* Padding(
-                          padding: EdgeInsets.all(20),
-                          child: Text(
-                            "Jogo da Velha",
-                            style: TextStyle(
-                                fontSize: 50,
-                                color: Colors.black,
-                                fontStyle: FontStyle.italic),
-                          ),
-                        ),*/
-                      ],
-                    ),
+
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -310,19 +301,19 @@ class _MyGameState extends State<MyGame> {
         } else {
           venceu = true;
         }
-        //print("Parou na coluna reta");
+
       }
     }
 
     //verifica diagonal
     if (venceu == false) {
       if (grade[1][1] == jogador) {
-        print('Clicou no bt meio');
+
         if (grade[0][0] == jogador && grade[2][2] == jogador) {
-          print("Parou na diagonal");
+
           venceu = true;
         } else if (grade[0][2] == jogador && grade[2][0] == jogador) {
-          print("Parou na diagonal");
+
           venceu = true;
         }
       }

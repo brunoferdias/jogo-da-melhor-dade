@@ -1,16 +1,22 @@
-# jogo_da_melhor_idade
+# Jogo da Melhor idade(jogo da velha) em FLutter
+Este é um trivial aplicativo de Jogo da Velha, criado com FLutter.
 
-A new Flutter project.
+# Funcionalidades
+Jogue o clássico Jogo da Velha contra outro jogador.
+O jogo possui marcação de vitória automática e permite reiniciar o placar a qualquer momento assim que alguém marcar ponto.
 
-## Getting Started
+# Como usar
+Certifique-se de ter o Flutter instalado em seu computador.
 
-This project is a starting point for a Flutter application.
+Clone este repositório usando git clone https://github.com/seu-usuario/jogo-da-melhor-dade.git.
 
-A few resources to get you started if this is your first Flutter project:
+Abra o diretório do projeto no seu editor de código.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Execute flutter run no terminal para executar o aplicativo no emulador ou dispositivo conectado.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Licença
+Este projeto é licenciado sob a Licença MIT - consulte o arquivo LICENSE para obter detalhes.
+
+
+
+

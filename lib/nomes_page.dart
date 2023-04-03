@@ -89,6 +89,7 @@ class _NamesState extends State<Names> {
                               color: Colors.red.shade900,
                               fontSize: 16.0,
                               fontWeight: FontWeight.bold,
+                              overflow: TextOverflow.fade
                             ),
                             focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15),
@@ -137,7 +138,7 @@ class _NamesState extends State<Names> {
                               return 'Campo obrigatório';
                             }
                             if (_playerB.text == namePlayer1) {
-                              return 'Nome do jogador 2 deve ser diferente do jogador 1';
+                              return 'Nomes iguais!';
                             }
                             return null;
                           },
@@ -164,6 +165,7 @@ class _NamesState extends State<Names> {
                               color: Colors.red.shade900,
                               fontSize: 16.0,
                               fontWeight: FontWeight.bold,
+                                overflow: TextOverflow.visible
                             ),
                             fillColor: Colors.white,
                             helperStyle: TextStyle(
